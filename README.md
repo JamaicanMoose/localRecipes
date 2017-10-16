@@ -32,13 +32,13 @@ SMS for convenience. There will also be a list of nearby farmer's
 markets so the user can find out where they may be able  
 purchase these ingredients. 
 
-###Features (Pick 3)###
+### Features (Pick 3) ###
 
 - Geolocation
 - Front end framework
 - SMS messaging
 
-###Data Collected & Used###
+### Data Collected & Used ###
 
 What foods are in season, based on their location
 with data scraped from seasonalfoodguide.org
@@ -49,18 +49,18 @@ API
 Recipes that contained specified foods, which we will
 use the spooncular.com Food API to find
 
-###APIs###
+### APIs ###
 
 - USDA Farmer's Market API 
 - spoocular.com Food API 
 
-###Algorithms and Techniques###
+### Algorithms and Techniques ###
 We will need to scrape the seasonalfoodguide.org website 
 for data on what food is in season and parse the 
 data return from the APIs so it can be presented to 
 the user. 
 
-###Mockups###
+### Mockups ###
 Found in the design doc folder
 
 

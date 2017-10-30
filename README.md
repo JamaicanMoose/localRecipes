@@ -69,3 +69,7 @@ the user.
 !["Recipe List"](designdoc/List-of-Recipes.png "Recipe List")
 
 !["Recipe"](designdoc/Recipe-1.png "Recipe")
+
+## Comments by Ming
+* Sorry, geolocation, messaging, front-end/back-end frameworks are not features.  What will geolocator/geolocation be used for? Ditto with server-side and client-side frameworks.  A feature is *what* the user(s) will *do*
+* Awesome using USDA data.

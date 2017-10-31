@@ -34,9 +34,10 @@ purchase these ingredients.
 
 ### Features (Pick 3) ###
 
-- Geolocation
-- Front end framework
-- SMS messaging
+- User can find seasonal foods in the user's area.
+- User can find recipes that use combinations of seasonal foods & ingredients the user is assumed to have.
+- User can find local farmers markets where seasonal foods could be found as well as a backup list of grocery stores in the area.
+- User can have the site send them (or someone else) an SMS reminder with the desired relevant information (recipe, seasonal foods, farmers market / grocery store)
 
 ### Data Collected & Used ###
 

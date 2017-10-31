@@ -9,6 +9,7 @@
 	* https://github.com/cubiclesoft/email_sms_mms_gateways/blob/master/sms_mms_gateways.txt
 	* This has a pretty encompasing list of SMS/Email gateways that would let us send SMS to numbers for free, we'd just have to find out what carrier the number is on beforehand
 	* https://numverify.com/ we could use this? or just ask the user
+  * https://github.com/typpo/textbelt another alternative for sms
 * Geolocation
 	* Easy, weve done this before 	
 

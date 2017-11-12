@@ -8,7 +8,7 @@ Status report:
 
 2. The biggest issue we encountered was getting 
    things set up for team members on Windows machines.
-   Also, learning how to use ReactJS and none of us 
+   Also, learning how to use ReactJS as none of us 
    have extensive experience with it. 
 
 3. By the next week we hope to have a working 

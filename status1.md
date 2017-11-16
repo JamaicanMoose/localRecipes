@@ -19,3 +19,7 @@
  -   will ultimately store all the recipes 
  -   retrieved, and a finished scraper for getting
  -   local foods for the user's location. 
+
+# Comments by Ming
+* " -3. We decided to have just one page for inputting " => This is fantastic!  Less is more.
+* Good goals for next week.

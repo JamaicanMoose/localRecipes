@@ -1,6 +1,6 @@
 To-do:
 
-1) 1st get request - sends location to ingredients API
+1) 1st post request - sends location to ingredients API
     -returns array of ingredients
 2) Make UI for choosing ingredients (Andrea)
     -Dynamic list of local ingredients w/ check boxes

@@ -18,17 +18,41 @@ class App extends Component {
       lat: 0,
       lng: 0,
       foods: [],
-      place: "Medford, MA, United States",
+      place: "",
       recipeid: 0
     };
+    if(navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition((pos) => {
+        this.setState({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+          })
+          var requestString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+          requestString += this.state.lat + "," +this.state.lng+'&result_type=locality&key=AIzaSyDHiGsX-4x94qYYJcYfcFlQFC3B31tbp9s';
+          fetch(requestString, {method: 'get'})
+          .then(response=>{return response.json()})
+          .then(results=>this.setState({place: results.results[0].formatted_address}))
+          //.then(results=>{this.setState({place: results.results.formatted_address})})
+      })
+    }
+    else {
+      alert("This broswer does not support geolaction. \nYou must enter a location to generate recipes.")
+    }
     this.handleSubmitLoc = this.handleSubmitLoc.bind(this);
     this.handleSubmitFoods = this.handleSubmitFoods.bind(this);
     this.handleSelectRecipe = this.handleSelectRecipe.bind(this);
   }
 
- /* checkLocStorage() {
-    
-  }*/
+
+  setPlace() {
+    if (this.state.lat === 0 || this.state.lng === 0)
+      return
+    var requestString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+    requestString += this.state.lat + "," +this.state.lng+'&result_type=locality&key=AIzaSyDHiGsX-4x94qYYJcYfcFlQFC3B31tbp9s';
+    fetch(requestString, {method: 'get'})
+    .then(response=>{return response.json()})
+    .then(results=>{this.setState({place: results.results.formatted_address})})
+}
 
   handleSubmitLoc(place) {
     this.setState({
@@ -61,8 +85,8 @@ class App extends Component {
       <HashRouter>  
 
         <div>
-          <Route exact path="/" component={()=><PlaceForm action = {this.handleSubmitLoc}/>}/>
-          <Route path ="/ingredientList" component={()=><Ingredients action = {this.handleSubmitFoods} place={this.state.place}/>}/>
+          <Route exact path="/" component={()=><PlaceForm action = {this.handleSubmitLoc} place={this.state.place}/>}/>
+          <Route path ="/ingredientList" component={()=><Ingredients action = {this.handleSubmitFoods} place={this.state.place} />}/>
           <Route path = "/recipeList" component={()=><RecipeList action = {this.handleSelectRecipe} ingredients={this.state.foods}/>}/>
           <Route path = "/chosenRecipe" component={()=><ChosenRecipe id={this.state.recipeid}/>}/>
         </div>

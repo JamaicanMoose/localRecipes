@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {Link} from 'react-router-dom';
 import './PlaceForm.css'
-// import logo from './logo.svg';
-// import './App.css';
 
 
 class PlaceForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      place: 'Enter a Location in the US'
+      place: this.props.place
     };
     this.onChange = (place) => this.setState({ place })
   }

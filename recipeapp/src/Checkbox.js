@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 
 class Checkbox extends Component {
 	constructor(props){
@@ -12,4 +12,4 @@ class Checkbox extends Component {
 		
 	}
 
-}
+}*/

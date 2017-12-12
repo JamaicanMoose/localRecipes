@@ -1,54 +1,76 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+
+import PlaceForm from './PlaceForm.js';
+import Ingredients from './ingredients.js';
+import {
+  Route,
+  HashRouter
+} from "react-router-dom";
+
+import ChosenRecipe from './recipe.js';
+import './App.css';
+import RecipeList from './RecipeList.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       lat: 0,
-      lng: 0, 
-      vegan: false,
-      veg: false,
-      glutenFree: false,
-      nutAllergy: false 
+      lng: 0,
+      foods: [],
+      place: "Medford, MA, United States",
+      recipeid: 0
     };
-    if(navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition((pos) => {
-        this.setState({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude
-          })
-      })
-    }
-    else {
-      alert("This broswer does not support geolaction. \nYou must enter a location to generate recipes.")
-    }
-}
+    this.handleSubmitLoc = this.handleSubmitLoc.bind(this);
+    this.handleSubmitFoods = this.handleSubmitFoods.bind(this);
+    this.handleSelectRecipe = this.handleSelectRecipe.bind(this);
+  }
 
-  /*switchBox(name) {
-    var key = name;
-    this.setState({key: !this.state.key})
-    alert(this.s)
+ /* checkLocStorage() {
+    
   }*/
 
-  render() {
-    return (
-      <div className="App">
-        <header className="header">
-          <h1 className="title">Welcome to Recipe App</h1>
-        </header>
-        <p className="Location-entry">
-          <input type="text" name="location" placeholder="Press generate to use your current location"/> 
-          <button onClick={()=>alert(this.state.lng)}>Generate!</button> <br />
-          <input type="checkbox" name="nutAllergy" onClick={()=>this.setState({nutAllergy: !this.state.nutAllergy})}/> Nut allergy 
-          <input type="checkbox" name="vegan" onClick={()=>this.setState({vegan: !this.state.vegan})}/> Vegan <br />
-          <input type="checkbox" name="vegetarian" onClick={()=>this.setState({veg: !this.state.veg})}/> Vegetarian 
-          <input type="checkbox" name="glutenFree" onClick={()=>this.setState({glutenFree: !this.state.glutenFree})}/> Gluten free<br />
-        </p>
-      </div>
-    );
+  handleSubmitLoc(place) {
+    this.setState({
+      place: place
+    });
   }
-}
 
-export default App;
+  handleSubmitFoods(newFoods) {
+    this.setState({
+      foods: newFoods
+    });
+  }
+
+  handleSelectRecipe(recipe) {
+    console.log("setting recipe id to")
+    console.log(recipe.id)
+    this.setState({
+      recipeid: recipe.id
+    });
+  }
+
+  render() {
+    return(
+
+      <div>
+      <div className="heading">
+          <h1 className="title">Sustainable Cooking</h1>
+      </div>
+
+      <HashRouter>  
+
+        <div>
+          <Route exact path="/" component={()=><PlaceForm action = {this.handleSubmitLoc}/>}/>
+          <Route path ="/ingredientList" component={()=><Ingredients action = {this.handleSubmitFoods} place={this.state.place}/>}/>
+          <Route path = "/recipeList" component={()=><RecipeList action = {this.handleSelectRecipe} ingredients={this.state.foods}/>}/>
+          <Route path = "/chosenRecipe" component={()=><ChosenRecipe id={this.state.recipeid}/>}/>
+        </div>
+
+      </HashRouter>
+      </div>
+    )
+  }
+
+} export default App;
+

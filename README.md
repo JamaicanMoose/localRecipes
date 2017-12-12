@@ -1,4 +1,5 @@
 # Sustainable Cooking
+[Demo](https://localingredients.herokuapp.com)
 ### Find recipes that make the best use of locally grown ingredients.
 ***
 ## Development Usage :

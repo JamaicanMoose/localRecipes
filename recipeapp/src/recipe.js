@@ -1,4 +1,5 @@
 import React from 'react';
+import './recipe.css'
 //import {NavLink} from 'react-router-dom';
 
 
@@ -62,7 +63,7 @@ class ChosenRecipe extends React.Component {
 			<div>
 				<h1>{this.state.title}</h1>
 
-				<div><img src = {this.state.image} style={{width: 500, height: 500}} alt="recipeImage"/></div>
+				<div><img className='image' src = {this.state.image} alt="recipeImage"/></div>
 
 				<p>Time to cook: {this.state.time} minutes</p>
 

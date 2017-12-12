@@ -43,17 +43,6 @@ class App extends Component {
     this.handleSelectRecipe = this.handleSelectRecipe.bind(this);
   }
 
-
-  setPlace() {
-    if (this.state.lat === 0 || this.state.lng === 0)
-      return
-    var requestString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
-    requestString += this.state.lat + "," +this.state.lng+'&result_type=locality&key=AIzaSyDHiGsX-4x94qYYJcYfcFlQFC3B31tbp9s';
-    fetch(requestString, {method: 'get'})
-    .then(response=>{return response.json()})
-    .then(results=>{this.setState({place: results.results.formatted_address})})
-}
-
   handleSubmitLoc(place) {
     this.setState({
       place: place

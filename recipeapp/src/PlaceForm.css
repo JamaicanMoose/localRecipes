@@ -12,7 +12,7 @@
 }
 
 .submitPlaceButton {
-    background-color: #EF8354; 
+    background-color: #EF8354;
     border: none;
     color: white;
     padding-bottom: 16px;
@@ -26,18 +26,19 @@
 }
 
 @media(max-width: 420px) {
-    .placeForm {
-        padding-top: 50vh;
-    }
+
+.placeForm {
+	padding-top: 15vh;
+}
+
     .description {
-        font-size: 6vmin;
+        font-size: 4vmin;
+
     }
 
     .submitPlaceButton {
-        width: 50vw;
-        height: 20vh;
-        font-size: 8vw;
+        width: 40vw;
+        height: 15vh;
+        font-size: 6vw;
     }
 }
-
-

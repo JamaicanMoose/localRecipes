@@ -56,8 +56,7 @@ class App extends Component {
   }
 
   handleSelectRecipe(recipe) {
-    console.log("setting recipe id to")
-    console.log(recipe.id)
+
     this.setState({
       recipeid: recipe.id
     });
@@ -71,7 +70,7 @@ class App extends Component {
           <h1 className="title">Sustainable Cooking</h1>
       </div>
 
-      <HashRouter>  
+      <HashRouter>
 
         <div>
           <Route exact path="/" component={()=><PlaceForm action = {this.handleSubmitLoc} place={this.state.place}/>}/>
@@ -86,4 +85,3 @@ class App extends Component {
   }
 
 } export default App;
-

@@ -44,7 +44,6 @@ class Ingredients extends React.Component{
 
 	clickIngredient(ingredient) {
 		var index = this.state.selectedIngredients.indexOf(ingredient);
-		console.log(index);
 		if(index > -1) {
 			this.state.selectedIngredients.splice(index, 1);
 		}
@@ -73,10 +72,7 @@ class Ingredients extends React.Component{
 	receiveIngredients() {
 		var myLat = this.state.lat
 		var myLng = this.state.lng
-		console.log(myLat)
-		console.log(myLng)
-		console.log("getting ingredients")
-		fetch('http://localhost:3000/getLocalFoods', 
+		fetch('https://localingredients.herokuapp.com/getLocalFoods',
 			{method: 'post', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'} ,
 			body: JSON.stringify({"latlng":
 				{"lat": myLat,
@@ -94,7 +90,7 @@ class Ingredients extends React.Component{
 		return (
 			<div>
      		<h1>Select some local ingredients: </h1>
-       				<ReactList 
+       				<ReactList
        					itemRenderer={this.renderItem.bind(this)}
        					itemsRenderer={this.itemsRenderer.bind(this)}
        					length={this.state.localIngredients.length}
@@ -114,4 +110,4 @@ class Ingredients extends React.Component{
 
 			)
 	}
-} export default Ingredients; 
+} export default Ingredients;

@@ -33,11 +33,10 @@ export default class RecipeList extends Component{
         requestString += '&limitLicense=false&number=5&ranking=1'
 
 
-       fetch(requestString, 
+       fetch(requestString,
             {method: 'get', headers: {'X-Mashape-Key': 'zLGhVRD74tmshdARXsmOTF39vxgEp1HqcfAjsnWFezMcWvZCSQ', 'Accept': 'application/json'}})
         .then(results => {return results.json();})
         .then(results => {this.setState({recipes: results})})
-       // .then(results => {console.log(results)})
  /*      this.setState({
             recipes: [
                 {

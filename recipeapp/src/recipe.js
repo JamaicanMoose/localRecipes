@@ -28,7 +28,6 @@ class ChosenRecipe extends React.Component {
 		this.setState({instructions: recipeInfo.instructions})
 		this.setState({sourceURL: recipeInfo.sourceUrl})
 		var ingredients = "";
-		console.log(recipeInfo);
 		for (var i = 0; i < recipeInfo.extendedIngredients.length - 1; i++) {
 			ingredients = ingredients + recipeInfo.extendedIngredients[i].name + ", ";
 		}
@@ -46,17 +45,16 @@ class ChosenRecipe extends React.Component {
 		//.header("X-Mashape-Key", "zLGhVRD74tmshdARXsmOTF39vxgEp1HqcfAjsnWFezMcWvZCSQ")
 		//.header("Accept", "application/json")
 		//.end(function (result) {
-  		//	console.log(result.status, result.headers, result.body);
 		//});
 
 		var request = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + this.state.id + '/information';
-		fetch(request, 
+		fetch(request,
 			{method: 'get', headers: {'X-Mashape-Key': 'zLGhVRD74tmshdARXsmOTF39vxgEp1HqcfAjsnWFezMcWvZCSQ', 'Accept': 'application/json'}})
 		.then(results => {return results.json();})
 		.then(results => {this.updateRecipe(results)})
 	}
 
-	
+
 
 	render() {
 		//iterate through ingredients array to print just name of ingredient
@@ -65,7 +63,7 @@ class ChosenRecipe extends React.Component {
 				<h1>{this.state.title}</h1>
 
 				<div><img src = {this.state.image} style={{width: 500, height: 500}} alt="recipeImage"/></div>
-			
+
 				<p>Time to cook: {this.state.time} minutes</p>
 
 				<p>Ingredients: {this.state.ingredients}</p>

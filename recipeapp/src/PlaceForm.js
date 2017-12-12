@@ -25,7 +25,7 @@ class PlaceForm extends Component {
 
     const myStyles = {
       input: {
-        width: '75vh', 
+        width: '75vw',
         border: 'honeydew',
         boxShadow: '0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)',
         padding: '16px',
@@ -39,11 +39,11 @@ class PlaceForm extends Component {
       <div className="placeForm">
       <br/>
       <br/>
-        <PlacesAutocomplete inputProps={inputProps} styles={myStyles}/> 
+        <PlacesAutocomplete inputProps={inputProps} styles={myStyles} className="autocompleteBox"/>
         <p className="description">
-          This is an app designed to promote sustainable cooking by suggesting 
-          recipes that can be made from local foods. Enter your location, 
-          then select a few local ingredients to see what recipes you 
+          This is an app designed to promote sustainable cooking by suggesting
+          recipes that can be made from local foods. Enter your location,
+          then select a few local ingredients to see what recipes you
           can make with them.
         </p>
         <p className="info-entry">

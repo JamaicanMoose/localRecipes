@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 const liStyle = {
     width: 1000,
@@ -23,11 +24,13 @@ export default class RecipeListItem extends Component {
         const { title, image, time } = this.props.recipe;
         const handleClick = this.props.handleClick;
         return (
+                <Link to="/chosenRecipe">
             <div style={liStyle} style={liStyle} onClick={handleClick}>
                 <img src={image} style={imageStyle}/>
                 <span style={spanStyle}>{title}</span>
                 <span style={spanStyle}>{time}</span>
             </div>
+            </Link>
         )
     }
 }

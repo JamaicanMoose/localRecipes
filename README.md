@@ -1,12 +1,12 @@
 # Sustainable Cooking
 ### Find recipes that make the best use of locally grown ingredients.
 ***
-## Usage :
+## Development Usage :
 - In "recipeapp" :
-        - npm install
-        - npm start
+  * npm install
+  * npm start
 - In "server" :
-        - node server
+  * node server
 
 ***
 

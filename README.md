@@ -1,4 +1,5 @@
 # Sustainable Cooking
+## Tufts COMP20 Final Project
 [Demo](https://localingredients.herokuapp.com)
 ### Find recipes that make the best use of locally grown ingredients.
 ***
